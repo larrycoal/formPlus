@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Form from './components/form'
+import Template from './components/template'
+import {connect} from 'react-redux'
+import {template} from './Store/action'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    fetchedTemplate:[],
+    filteredTemplate:[]
+  }
+
+  componentDidMount(){
+    this.props.dispatch(template()).then(()=>{
+      this.setState({
+        fetchedTemplate:this.props.template,
+        filteredTemplate:this.props.template
+      })
+    })
+  }
+
+  render() {
+    return (
+      <div className="main_wrapper">
+        <Form/>
+        <Template template={this.state.filteredTemplate}/>
+      </div>
+    );
+  }
 }
-
-export default App;
+const mapStateToProps = (state)=>{
+ return state.template
+}
+export default connect(mapStateToProps)(App);
