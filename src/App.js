@@ -27,7 +27,6 @@ class App extends Component {
         let filtered = newTemplate.filter((template)=>{
               return template.name.match(formInput.value)
         })
-        console.log(filtered)
         this.setState({
           ...this.state,
           filteredTemplate:filtered
