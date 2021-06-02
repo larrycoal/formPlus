@@ -66,6 +66,7 @@ Template Component
 .template_wrapper{
     height: 70vh;
     display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 .templateInfo{
     padding: 10px;
@@ -90,6 +91,7 @@ Template Component
     justify-content: space-between;
     margin: 20px 0px;
     font-size: small;
+    height: fit-content;
 }
 .templateCard{
     display: flex;
