@@ -14,6 +14,46 @@ html,body,#root{
     height: 100vh;
     margin: 0 auto;
 }
+
+.loader{
+  height: 250px;
+  width: 250px;
+  position: relative;
+}
+.loader section{
+    border: 3px solid transparent;
+    border-top-color: black;
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    animation: spin 1.5s forwards infinite;
+}
+.loader section section{
+    border: 3px solid transparent;
+    border-top-color: black;
+    border-radius: 100%;
+    height: 90px;
+    width: 90px;
+    margin: 2px;
+    animation: spintwo 1.5s forwards infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+@keyframes spintwo{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 /* ==========================
 Form Component
 ============================= */

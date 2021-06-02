@@ -3,7 +3,7 @@ import { TemplateCard } from "../Utils";
 import Pagination from "./pagination";
 
 const Template = (props) => {
-  const { template,category } = props;
+  const { template, category } = props;
   let totalPage = 0;
   const [state, setState] = useState({
     current: 0,
@@ -11,13 +11,13 @@ const Template = (props) => {
   });
 
   const showTemplate = () => {
-      //console.log(template)
+    //console.log(template)
     if (template.length === 0) {
-      return <div>Loading</div>;
+      return <section className="loader"><section><section></section></section></section>;
     }
     totalPage = Math.floor(template.length / 2000);
     let currentPage = template.slice(state.current, state.current + 2000);
-    return currentPage.map((template,i) => {
+    return currentPage.map((template, i) => {
       return <TemplateCard template={template} key={i} />;
     });
   };
