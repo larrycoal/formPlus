@@ -27,6 +27,7 @@ html,body,#root{
     height: 100px;
     width: 100px;
     margin: 0 auto;
+   
     animation: spin 1.5s forwards infinite;
 }
 .loader section section{
@@ -139,12 +140,13 @@ Template Component
     gap: 50px;
     overflow: scroll;
     justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
 }
 .templateCard div {
     background: white;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
-    width: 25vw;
     display: flex;
     flex-direction: column;
 }
@@ -188,4 +190,38 @@ Pagination Component
 .pagination_wrapper span:nth-child(1){
     border: 1px solid;
     padding: 5px 10px;
+}
+/* ==========================
+Media query
+============================= */
+@media (max-width:700px){
+    .form_wrapper{
+        flex-direction: column;
+        margin:20px 0px
+    }
+    .form_wrapper div:nth-child(2){
+        width: 90vw;
+        overflow: scroll;
+    }
+    .template_wrapper{
+        height: 70vh;
+    }
+    .templateCard div{
+        margin: 0px 15px;
+    }
+    .templateInfo{
+        margin: 0;
+    }
+    .templateInfo span{
+        font-size: x-small;
+    }
+    .pagination_wrapper{
+        margin: 0;
+    }
+}
+@media (max-width:770px){
+    .form_wrapper{
+        flex-direction: column;
+        margin:20px 0px
+    }
 }

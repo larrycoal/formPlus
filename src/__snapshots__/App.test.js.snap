@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches form snapshot 1`] = `
+<div
+  className="form_wrapper"
+>
+  <div>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Templates"
+      type="text"
+      value=""
+    />
+    <i
+      aria-hidden="true"
+      class="fa fa-search"
+    />
+  </div>
+  <div>
+    <span>
+      Sort By:
+    </span>
+    <span>
+      <label>
+        category
+      </label>
+      <select
+        name="category"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="All"
+        >
+          All
+        </option>
+        <option
+          value="Health"
+        >
+          Health
+        </option>
+        <option
+          value="E-commerce"
+        >
+          E-commerce
+        </option>
+        <option
+          value="Education"
+        >
+          Education
+        </option>
+      </select>
+    </span>
+    <span>
+      <label>
+        order
+      </label>
+      <select
+        name="order"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="Default"
+        >
+          Default
+        </option>
+        <option
+          value="Ascending"
+        >
+          Ascending
+        </option>
+        <option
+          value="Descending"
+        >
+          Descending
+        </option>
+      </select>
+    </span>
+    <span>
+      <label>
+        date
+      </label>
+      <select
+        name="date"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="Default"
+        >
+          Default
+        </option>
+        <option
+          value="Ascending"
+        >
+          Ascending
+        </option>
+        <option
+          value="Descending"
+        >
+          Descending
+        </option>
+      </select>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`matches pagination snapshot 1`] = `
+<div
+  className="pagination_wrapper"
+>
+  <div>
+    <button
+      disabled={false}
+      onClick={[Function]}
+    >
+      Previous
+    </button>
+  </div>
+  <div>
+    <span />
+    of
+    <span />
+  </div>
+  <div>
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      Next
+    </button>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot 1`] = `
+<div
+  className="form_wrapper"
+>
+  <div>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Templates"
+      type="text"
+      value=""
+    />
+    <i
+      aria-hidden="true"
+      class="fa fa-search"
+    />
+  </div>
+  <div>
+    <span>
+      Sort By:
+    </span>
+    <span>
+      <label>
+        category
+      </label>
+      <select
+        name="category"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="All"
+        >
+          All
+        </option>
+        <option
+          value="Health"
+        >
+          Health
+        </option>
+        <option
+          value="E-commerce"
+        >
+          E-commerce
+        </option>
+        <option
+          value="Education"
+        >
+          Education
+        </option>
+      </select>
+    </span>
+    <span>
+      <label>
+        order
+      </label>
+      <select
+        name="order"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="Default"
+        >
+          Default
+        </option>
+        <option
+          value="Ascending"
+        >
+          Ascending
+        </option>
+        <option
+          value="Descending"
+        >
+          Descending
+        </option>
+      </select>
+    </span>
+    <span>
+      <label>
+        date
+      </label>
+      <select
+        name="date"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value="Default"
+        >
+          Default
+        </option>
+        <option
+          value="Ascending"
+        >
+          Ascending
+        </option>
+        <option
+          value="Descending"
+        >
+          Descending
+        </option>
+      </select>
+    </span>
+  </div>
+</div>
+`;
