@@ -18,7 +18,8 @@ html,body,#root{
 .loader{
   height: 250px;
   width: 250px;
-  position: relative;
+  grid-column: 2;
+  align-self: center;
 }
 .loader section{
     border: 3px solid transparent;
@@ -135,8 +136,6 @@ Template Component
     height: fit-content;
 }
 .templateCard{
-    display: flex;
-    flex-wrap: wrap;
     gap: 50px;
     overflow: scroll;
     justify-content: center;

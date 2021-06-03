@@ -50,8 +50,10 @@ class App extends Component {
         category:formInput.value
       })
         }
-      }else if(formInput.name === "order"){
-        let newTemplate = this.state.filteredTemplate
+      }
+      //modify order by name
+      else if(formInput.name === "order"){
+        let newTemplate = this.state.fetchedTemplate
         let ordered = newTemplate.sort((a,b)=>{
           let name1 = a.name.toUpperCase()
           let name2 = b.name.toUpperCase()
@@ -76,21 +78,14 @@ class App extends Component {
          }else if(formInput.value === "Default"){
           this.setState({
             ...this.state,
-            filteredTemplate:this.state.filteredTemplate
+            filteredTemplate:this.state.fetchedTemplate
           })
          }
       }else if(formInput.name === "date"){
         let newTemplate = this.state.filteredTemplate
         let ordered = newTemplate.sort((a,b)=>{
-          let date1 = a.date
-          let date2 = b.date
-          if(date1 < date2){
-            return -1
-          }
-          if(date1 > date2){
-            return 1
-          }
-            return 0
+          return b.date - a.date
+          
         })
          if(formInput.value === "Ascending"){
            this.setState({

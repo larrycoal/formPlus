@@ -127,7 +127,7 @@ exports[`matches pagination snapshot 1`] = `
   </div>
   <div>
     <button
-      disabled={true}
+      disabled={false}
       onClick={[Function]}
     >
       Next
@@ -136,110 +136,34 @@ exports[`matches pagination snapshot 1`] = `
 </div>
 `;
 
-exports[`matches snapshot 1`] = `
-<div
-  className="form_wrapper"
->
-  <div>
-    <input
-      name="search"
-      onChange={[Function]}
-      placeholder="Search Templates"
-      type="text"
-      value=""
-    />
-    <i
-      aria-hidden="true"
-      class="fa fa-search"
-    />
-  </div>
-  <div>
-    <span>
-      Sort By:
-    </span>
-    <span>
-      <label>
-        category
-      </label>
-      <select
-        name="category"
-        onChange={[Function]}
-        value=""
-      >
-        <option
-          value="All"
-        >
-          All
-        </option>
-        <option
-          value="Health"
-        >
-          Health
-        </option>
-        <option
-          value="E-commerce"
-        >
-          E-commerce
-        </option>
-        <option
-          value="Education"
-        >
-          Education
-        </option>
-      </select>
-    </span>
-    <span>
-      <label>
-        order
-      </label>
-      <select
-        name="order"
-        onChange={[Function]}
-        value=""
-      >
-        <option
-          value="Default"
-        >
-          Default
-        </option>
-        <option
-          value="Ascending"
-        >
-          Ascending
-        </option>
-        <option
-          value="Descending"
-        >
-          Descending
-        </option>
-      </select>
-    </span>
-    <span>
-      <label>
-        date
-      </label>
-      <select
-        name="date"
-        onChange={[Function]}
-        value=""
-      >
-        <option
-          value="Default"
-        >
-          Default
-        </option>
-        <option
-          value="Ascending"
-        >
-          Ascending
-        </option>
-        <option
-          value="Descending"
-        >
-          Descending
-        </option>
-      </select>
-    </span>
-  </div>
+exports[`matches template snapshot 1`] = `
+<div>
+  <h2>
+    test
+  </h2>
+  <p>
+    test description
+  </p>
+  <a
+    href="https://test.com"
+  >
+    Use Template
+  </a>
+</div>
+`;
+
+exports[`matches templateCard snapshot 1`] = `
+<div>
+  <h2>
+    test
+  </h2>
+  <p>
+    test description
+  </p>
+  <a
+    href="https://test.com"
+  >
+    Use Template
+  </a>
 </div>
 `;

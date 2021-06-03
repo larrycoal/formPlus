@@ -12,7 +12,7 @@ const pagination = (props) => {
                 <span>{props.totalPage}</span>
             </div>
             <div>
-            <button disabled={props.totalPage === props.page ? true : false} onClick={()=>props.nextPage()}>Next</button>
+            <button disabled={props.totalPage <= props.page ? true : false} onClick={()=>props.nextPage()}>Next</button>
             </div>
         </div>
     );
