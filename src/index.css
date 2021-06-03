@@ -68,11 +68,12 @@ Form Component
 .form_wrapper div:nth-child(1){
     border: 1px solid #BDBDBD;
     width: fit-content;
-    padding:5px
+    padding:10px 20px
 }
 .form_wrapper div:nth-child(1) i{
  color: #BDBDBD;
  font-weight: 200;
+
 }
 .form_wrapper input{
     border: none;
@@ -218,7 +219,7 @@ Media query
         margin: 0;
     }
 }
-@media (max-width:770px){
+@media (max-width:800px){
     .form_wrapper{
         flex-direction: column;
         margin:20px 0px
