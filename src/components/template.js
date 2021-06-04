@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { TemplateCard } from "../Utils";
 import Pagination from "./pagination";
+import {connect} from 'react-redux'
+import {fetchTemplate} from '../Store/action'
 
 const Template = (props) => {
-  const { template, category } = props;
+ useEffect(()=>{
+     props.dispatch(fetchTemplate())
+ },[props])
+  const { filteredTemplate, category } = props;
   let totalPage = 0;
   const [state, setState] = useState({
     current: 0,
@@ -11,12 +16,11 @@ const Template = (props) => {
   });
 
   const showTemplate = () => {
-    //console.log(template)
-    if (template.length === 0) {
+    if (!filteredTemplate) {
       return <section className="loader"><section><section></section></section></section>;
     }
-    totalPage = Math.floor(template.length / 2000);
-    let currentPage = template.slice(state.current, state.current + 2000);
+    totalPage = Math.floor(filteredTemplate.length / 2000);
+    let currentPage = filteredTemplate.slice(state.current, state.current + 2000);
     return currentPage.map((template, i) => {
       return <TemplateCard template={template} key={i} />;
     });
@@ -67,4 +71,8 @@ const Template = (props) => {
   );
 };
 
-export default Template;
+const mapStateToProps = (state)=>{
+  return state.template
+}
+
+export default connect(mapStateToProps)(Template);

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FormField } from "../Utils";
-
+import {connect} from 'react-redux'
+import {filter} from '../Utils/index'
+import {updateCategory,updateDate,updateOrder,updateSearch} from '../Store/action'
 const Form = (props) => {
   const [state,setState] = useState({
     search: {
@@ -40,25 +42,32 @@ const Form = (props) => {
           setState({
               ...newState
           })
-          props.filter(newState[input.name])
-      }else if(input.name === "search"){
+        let filteredTemplate =  filter(props.template,newState[input.name])
+        props.dispatch(updateCategory(filteredTemplate))
+
+      }
+      else if(input.name === "search"){
         newState[input.name].value=input.value
         setState({
             ...newState
         })
-        props.filter(newState[input.name])
-    }else if(input.name === "order"){
+        let filteredTemplate =  filter(props.template,newState[input.name])
+        props.dispatch(updateSearch(filteredTemplate))
+    }
+    else if(input.name === "order"){
         newState[input.name].value=input.value
         setState({
             ...newState
         })
-        props.filter(newState[input.name])
+        let filteredTemplate =  filter(props.filteredTemplate,newState[input.name])
+        props.dispatch(updateOrder(filteredTemplate))
     }else if(input.name === "date"){
         newState[input.name].value=input.value
         setState({
             ...newState
         })
-        props.filter(newState[input.name])
+        let filteredTemplate =  filter(props.template,newState[input.name])
+        props.dispatch(updateDate(filteredTemplate))
     }
       
   }
@@ -77,5 +86,7 @@ const Form = (props) => {
     </div>
   );
 };
-
-export default Form;
+const mapStateToProps=(state)=>{
+    return state.template
+}
+export default connect(mapStateToProps)(Form);

@@ -218,6 +218,9 @@ Media query
     .pagination_wrapper{
         margin: 0;
     }
+    .loader{
+        grid-column: 1/2;
+    }
 }
 @media (max-width:800px){
     .form_wrapper{

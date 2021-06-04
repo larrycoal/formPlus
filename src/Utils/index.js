@@ -46,3 +46,85 @@ export const TemplateCard = ({ template }, key) => (
     <a href={template.link}>Use Template</a>
   </div>
 );
+
+export const filter = (state,filterInput)=>{   
+    let newState = state
+    if(filterInput.name==="category"){
+         if(filterInput.value === "All"){
+             return {
+                 template:newState,
+                 category:filterInput.value
+             }
+         }else {
+            let filtered = newState.filter((state)=>state.category === filterInput.value)
+            return {
+                template:filtered,
+                category:filterInput.value,
+                order:"Default",
+                date:"Default"
+            }
+         }
+    }
+    else if(filterInput.name === "search"){
+        let filtered = newState.filter((state)=>state.name.match(filterInput.value))
+        return{
+            template:filtered
+        }
+    }else if(filterInput.name === "order"){
+        let def = newState
+        let ordered = newState.sort((a,b)=>{
+            let name1 = a.name.toUpperCase()
+          let name2 = b.name.toUpperCase()
+          if(name1 < name2){
+            return -1
+          }
+          if(name1 > name2){
+            return 1
+          }
+          return 0
+        })
+        if(filterInput.value === "Ascending"){
+            return {
+                template:ordered,
+                order:filterInput.value
+            }
+        }
+        else if(filterInput.value === "Descending"){
+            return {
+                template:ordered.reverse(),
+                order:filterInput.value
+            }
+        }
+        if(filterInput.value === "Default"){
+            return {
+                template:def,
+                order:filterInput.value
+            }
+        }
+    }
+    else if(filterInput.name === "date"){
+        let def = newState
+        let ordered = newState.sort((a,b)=>{
+            return a.date - b.date
+        })
+        if(filterInput.value === "Ascending"){
+            console.log(ordered)
+            return {
+                template:ordered,
+                date:filterInput.value
+            }
+        }
+        else if(filterInput.value === "Descending"){
+            return {
+                template:ordered.reverse(),
+                date:filterInput.value
+            }
+        }
+        if(filterInput.value === "Default"){
+            return {
+                template:def,
+                date:filterInput.value
+            }
+        }
+    }
+}
