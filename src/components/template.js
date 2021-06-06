@@ -56,7 +56,7 @@ const Template = (props) => {
         <div className="templateCount">
           <span>{category} Templates</span>
           <span>
-            {state.current + 1}-{state.current + 2000} template
+            {state.current + 1}-{Math.ceil(filteredTemplate.length / 2000) === state.page?  filteredTemplate.length : state.current + 2000} template
           </span>
         </div>
         <div className="templateCard">{showTemplate()}</div>
