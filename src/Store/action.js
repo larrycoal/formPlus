@@ -32,7 +32,6 @@ export const updateCategory = (newTemplate) => {
   };
 };
 export const updateSearch = (newTemplate) => {
-   console.log(newTemplate)
   return {
     type: "filter_search",
     payload: newTemplate,

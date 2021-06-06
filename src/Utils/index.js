@@ -106,10 +106,17 @@ export const filter = (state,filterInput)=>{
     else if(filterInput.name === "date"){
         let def = newState
         let ordered = newState.sort((a,b)=>{
-            return a.date - b.date
+           let date1=a.created 
+           let date2= b.created
+            if(date1 < date2){
+                return -1
+              }
+              if(date1 > date2){
+                return 1
+              }
+              return 0
         })
         if(filterInput.value === "Ascending"){
-            console.log(ordered)
             return {
                 filteredTemplate:ordered,
                 date:filterInput.value
