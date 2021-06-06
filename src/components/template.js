@@ -19,7 +19,7 @@ const Template = (props) => {
     if (!filteredTemplate) {
       return <section className="loader"><section><section></section></section></section>;
     }
-    totalPage = Math.floor(filteredTemplate.length / 2000);
+    totalPage = Math.ceil(filteredTemplate.length / 2000);
     let currentPage = filteredTemplate.slice(state.current, state.current + 2000);
     return currentPage.map((template, i) => {
       return <TemplateCard template={template} key={i} />;

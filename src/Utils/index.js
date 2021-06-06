@@ -52,13 +52,13 @@ export const filter = (state,filterInput)=>{
     if(filterInput.name==="category"){
          if(filterInput.value === "All"){
              return {
-                 template:newState,
+                filteredTemplate:newState,
                  category:filterInput.value
              }
          }else {
             let filtered = newState.filter((state)=>state.category === filterInput.value)
             return {
-                template:filtered,
+                filteredTemplate:filtered,
                 category:filterInput.value,
                 order:"Default",
                 date:"Default"
@@ -68,7 +68,7 @@ export const filter = (state,filterInput)=>{
     else if(filterInput.name === "search"){
         let filtered = newState.filter((state)=>state.name.match(filterInput.value))
         return{
-            template:filtered
+            filteredTemplate:filtered
         }
     }else if(filterInput.name === "order"){
         let def = newState
@@ -85,19 +85,19 @@ export const filter = (state,filterInput)=>{
         })
         if(filterInput.value === "Ascending"){
             return {
-                template:ordered,
+                filteredTemplate:ordered,
                 order:filterInput.value
             }
         }
         else if(filterInput.value === "Descending"){
             return {
-                template:ordered.reverse(),
+                filteredTemplate:ordered.reverse(),
                 order:filterInput.value
             }
         }
         if(filterInput.value === "Default"){
             return {
-                template:def,
+                filteredTemplate:def,
                 order:filterInput.value
             }
         }
@@ -110,19 +110,19 @@ export const filter = (state,filterInput)=>{
         if(filterInput.value === "Ascending"){
             console.log(ordered)
             return {
-                template:ordered,
+                filteredTemplate:ordered,
                 date:filterInput.value
             }
         }
         else if(filterInput.value === "Descending"){
             return {
-                template:ordered.reverse(),
+                filteredTemplate:ordered.reverse(),
                 date:filterInput.value
             }
         }
         if(filterInput.value === "Default"){
             return {
-                template:def,
+                filteredTemplate:def,
                 date:filterInput.value
             }
         }

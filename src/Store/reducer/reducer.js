@@ -4,7 +4,7 @@ const templateReducer = (state = {}, action) => {
       return {
         ...state,
         template: action.payload,
-        filteredTemplate: action.payload,
+        filteredTemplate:action.payload,
         category: "All",
         order:"Default",
         date:"Default"
@@ -16,27 +16,24 @@ const templateReducer = (state = {}, action) => {
     case "filter_category":
       return {
         ...state,
-        filteredTemplate: action.payload.template,
-        category: action.payload.category,
+        ...action.payload,
         order:action.payload.order,
         date:action.payload.date
       };
     case "filter_search":
       return {
         ...state,
-        filteredTemplate: action.payload,
+        ...action.payload,
       };
     case "filter_order":
       return {
         ...state,
-        filteredTemplate: action.payload.template,
-        order:action.payload.order
+        ...action.payload,
       };
       case "filter_date":
       return {
         ...state,
-        filteredTemplate: action.payload.template,
-        date:action.payload.date
+        ...action.payload,
       };
     default:
       return state;

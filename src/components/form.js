@@ -29,20 +29,24 @@ const Form = (props) => {
       options: ["Default", "Ascending", "Descending"],
       value:""
     },
+    template:[],
+    filteredTemplate:[]
   });
 
 
   const handleChange = (input)=>{
       let newState = state
+      newState.template=props.template
       if(input.name === "category"){
           newState.search.value=""
           newState.order.value="Default"
           newState.date.value="Default"
           newState[input.name].value=input.value
+         
           setState({
               ...newState
           })
-        let filteredTemplate =  filter(props.template,newState[input.name])
+        let filteredTemplate =  filter(props.template,state[input.name])
         props.dispatch(updateCategory(filteredTemplate))
 
       }
@@ -51,7 +55,7 @@ const Form = (props) => {
         setState({
             ...newState
         })
-        let filteredTemplate =  filter(props.template,newState[input.name])
+        let filteredTemplate =  filter(props.template,state[input.name])
         props.dispatch(updateSearch(filteredTemplate))
     }
     else if(input.name === "order"){
