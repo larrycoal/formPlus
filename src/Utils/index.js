@@ -68,7 +68,8 @@ export const filter = (state,filterInput)=>{
     else if(filterInput.name === "search"){
         let filtered = newState.filter((state)=>state.name.match(filterInput.value))
         return{
-            filteredTemplate:filtered
+            filteredTemplate:filtered,
+            search:filterInput.value
         }
     }else if(filterInput.name === "order"){
         let def = newState

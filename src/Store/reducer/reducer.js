@@ -7,7 +7,8 @@ const templateReducer = (state = {}, action) => {
         filteredTemplate:action.payload,
         category: "All",
         order:"Default",
-        date:"Default"
+        date:"Default",
+        search:"Default"
       };
     case "fetch_template":
       return {
