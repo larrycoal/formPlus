@@ -18,8 +18,6 @@ const templateReducer = (state = {}, action) => {
       return {
         ...state,
         ...action.payload,
-        order:action.payload.order,
-        date:action.payload.date
       };
     case "filter_search":
       return {

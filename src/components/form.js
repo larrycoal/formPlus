@@ -36,7 +36,6 @@ const Form = (props) => {
 
   const handleChange = (input)=>{
       let newState = state
-      newState.template=props.template
       if(input.name === "category"){
           newState.search.value=""
           newState.order.value="Default"
@@ -55,7 +54,7 @@ const Form = (props) => {
         setState({
             ...newState
         })
-        let filteredTemplate =  filter(props.template,state[input.name])
+        let filteredTemplate =  filter(props.filteredTemplate,state[input.name])
         props.dispatch(updateSearch(filteredTemplate))
     }
     else if(input.name === "order"){
