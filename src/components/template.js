@@ -29,7 +29,7 @@ const Template = (props) => {
     });
   };
   const nextPage = () => {
-    if (state.page < 12) {
+    if (state.page < totalPage) {
       setState({
         ...state,
         page: state.page + 1,
