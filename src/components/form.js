@@ -69,7 +69,7 @@ const Form = (props) => {
         setState({
             ...newState
         })
-        let filteredTemplate =  filter(props.template,newState[input.name])
+        let filteredTemplate =  filter(props.filteredTemplate,newState[input.name])
         props.dispatch(updateDate(filteredTemplate))
     }
       
