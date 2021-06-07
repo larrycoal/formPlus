@@ -40,6 +40,11 @@ html,body,#root{
     margin: 2px;
     animation: spintwo 1.5s forwards infinite;
 }
+.networkError{
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 @keyframes spin{
     0%{
         transform: rotate(0deg);

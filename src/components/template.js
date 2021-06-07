@@ -8,7 +8,7 @@ const Template = (props) => {
  useEffect(()=>{
      props.dispatch(fetchTemplate())
  },[props])
-  const { filteredTemplate, category } = props;
+  const { filteredTemplate, category,  } = props;
   let totalPage = 0;
   const [state, setState] = useState({
     current: 0,
@@ -18,6 +18,9 @@ const Template = (props) => {
   const showTemplate = () => {
     if (!filteredTemplate) {
       return <section className="loader"><section><section></section></section></section>;
+    } 
+    if(filteredTemplate.error){
+      return <section className="networkError">{filteredTemplate.message}</section>
     }
     totalPage = Math.ceil(filteredTemplate.length / 2000);
     let currentPage = filteredTemplate.slice(state.current, state.current + 2000);
@@ -72,7 +75,7 @@ const Template = (props) => {
 };
 
 const mapStateToProps = (state)=>{
-  return state.template
+  return state.error? state.error : state.template
 }
 
 export default connect(mapStateToProps)(Template);

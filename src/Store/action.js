@@ -12,7 +12,12 @@ export const template = async () => {
           category: data.category[Math.floor(Math.random() * 2)],
         };
       });
-    });
+    }).catch(err=>{
+        return {
+            error:true,
+            message:"Network Error Please ensure you are connected to the internet"
+        }
+    })
 
   return {
     type: "all_template",
